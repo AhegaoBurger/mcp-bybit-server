@@ -13,6 +13,9 @@ startCommand:
       bybitSecretKey:
         type: string
         description: Bybit API secret key.
+      testnet:
+        type: boolean
+        description: Whether to use the testnet.
   commandFunction:
     |-
-    config => ({command: 'mcp-bybit-server', args: [], env: { ACCESS_KEY: config.bybitAccessKey, SECRET_KEY: config.bybitSecretKey }})
+    config => ({command: 'mcp-bybit-server', args: [], env: { ACCESS_KEY: config.bybitAccessKey, SECRET_KEY: config.bybitSecretKey, TESTNET: config.testnet }})
